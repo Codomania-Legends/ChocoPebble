@@ -1,0 +1,136 @@
+.main-div-cart {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2b160e;
+    overflow: hidden;
+}
+
+.cartbg-img-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content-layer-cart {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.cart-title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-family: sans-serif;
+}
+
+/* Container for the table */
+.cart-container {
+    width: 100%;
+    background: rgba(30, 13, 7, 0.4); /* Dark semi-transparent overlay */
+    border-radius: 30px;
+    padding: 40px;
+}
+
+/* Shared Grid Layout for Header and Items */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr 1.5fr 1fr 2fr;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.cart-header {
+    color: #b1b1b1;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* The actual row styling */
+.cart-item {
+    background: #1e0d07; /* Solid dark brown row */
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: white;
+}
+
+.cart-img-box img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.p-name {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Product Count Buttons */
+/* ... keep your existing CSS and update these specific parts ... */
+
+.counter-box {
+    background: #120703; /* Slightly darker to stand out */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    padding: 5px;
+    width: 100px;
+    margin: 0 auto;
+    border: 1px solid #3d2015;
+}
+
+.counter-box button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 30px;
+    transition: color 0.2s;
+}
+
+.counter-box button:hover {
+    color: #00a2ff; /* Glows blue on hover like your card border */
+}
+
+.counter-box span {
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+}
+/* Instructions Input */
+.instructions-box input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: #888;
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 5px;
+}
+
+.instructions-box input:focus {
+    outline: none;
+    border-bottom-color: #666;
+}
+
+/* Responsive Tweak */
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 1fr 1fr; /* Stack items for tablet/mobile */
+        gap: 20px;
+    }
+    .cart-header {
+        display: none; /* Hide headers on small screens */
+    }
+}

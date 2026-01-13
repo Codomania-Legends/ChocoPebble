@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import "./Navbar.css";
 import logo from "/logo.png";
 import gsap from 'gsap';
-import { Link } from "react-router-dom"; // Corrected import
+import { Link, useNavigate } from "react-router-dom"; // Corrected import
 
 function Navbar({ aboutus }) {
     const navRef = useRef(null); // A single ref for the whole navbar
-
+    const navigate = useNavigate()
     // Use refs for the specific animation targets
     const heartRef = useRef(null);
     const heart1Ref = useRef(null);
@@ -75,6 +75,7 @@ function Navbar({ aboutus }) {
                     className="shadow home-like flex"
                     onMouseEnter={handleHeartEnter}
                     onMouseLeave={handleHeartLeave}
+                    onClick={ () => navigate('/liked') }
                 >
                     <i ref={heartRef} className="fa-solid fa-heart heart"></i>
                     <i ref={heart1Ref} className="fa-solid fa-heart heart1"></i>
@@ -84,6 +85,7 @@ function Navbar({ aboutus }) {
                     className="shadow home-cart gsap"
                     onMouseEnter={handleCartEnter}
                     onMouseLeave={handleCartLeave}
+                    onClick={ () => navigate('/cart') }
                 >
                     <i ref={cartRef} className="fa-brands fa-opencart cart"></i>
                     <i ref={cloudRef} className="fa-brands fa-cloudversify cloud"></i>
