@@ -31,7 +31,7 @@ function Chocobar(timeLine) {
                   {
                     height: 420,
                     width: 370,
-                    x : "62%",
+                    x : "50%",
                     y: "-1%",
                     duration : 1,
                     opacity: 1,

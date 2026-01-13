@@ -1,8 +1,11 @@
-import React, { useState } from 'react'; // Added useState
+import React, { useEffect, useState } from 'react'; // Added useState
 import './Cart.css';
 import LikedBG from '/LikedBG.png';
+import gsap from 'gsap';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function Cart() {
+    const navigate = useNavigate()
     // 1. Initialize state for the product count
     const [count, setCount] = useState(2); 
     const basePrice = 256.3;
@@ -18,8 +21,39 @@ function Cart() {
         }
     };
 
+    useEffect( () => {
+        gsap.fromTo( ".main-div-cart" , 
+            {
+                right : "-100%"
+            },
+            
+            {
+            right : -15,
+            borderTopLeftRadius : "5em",
+            borderBottomLeftRadius : "5em",
+            ease : "back.inOut",
+            duration : 2,
+        } )
+    } , [] )
+    
     return (
         <main className="main-div-cart flex">
+            <span onClick={() => {
+                gsap.to(".main-div-cart",{
+                    right : "-100%",
+                    duration : 2,
+                    ease : "back.inOut",
+                    onComplete : () => navigate("/")
+                })
+            }} style={{
+                position : "absolute",
+                right : "10%",
+                top : 10,
+                color : 'white',
+                fontSize : "xxx-large",
+                zIndex : 1,
+
+            }}>X</span>
             <img src={LikedBG} alt="background" className='cartbg-img-div'/>
 
             <div className="content-layer-cart">

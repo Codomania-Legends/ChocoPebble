@@ -9,10 +9,15 @@ import Cart from "./Components/Cart/Cart.jsx";
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
+
+      <Route path="/" element={<Home />}>
+
+        <Route path="cart" element={ <Cart/> } />
+        <Route path="liked" element={ <Liked/> } />
+
+      </Route>
+
       <Route path="/aboutus" element={<AboutUS />} />
-      <Route path="/liked" element={ <Liked/> } />
-      <Route path="/cart" element={ <Cart/> } />
-      <Route path="/" element={<Home />}  />
     </Routes>
   </BrowserRouter>
 );

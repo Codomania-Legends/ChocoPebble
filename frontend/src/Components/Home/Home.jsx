@@ -14,6 +14,7 @@ import Buy from '../BuyChocolate_Icecream/Buy';
 import Discript from '../Discription/Discript';
 import PageFooter from '../PageFooter/PageFooter';
 import Navbar from '../Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
 
 gsap.registerPlugin(SplitText);
 
@@ -21,51 +22,76 @@ function Home() {
   const textRef = useRef();
   const HR_ref = useRef()
 
-  useEffect(() => {
-    const timeLine = gsap.timeline()
-    BackgroundStart('.background-gr' , timeLine);
-    Chocobar(timeLine);
+// ... inside your component ...
 
-    // Split the text into characters
-    const split = SplitText.create(textRef.current, { type: 'chars' });
+// 1. Create a ref for your main container (optional but recommended for scoping)
+const containerRef = useRef(null); 
 
-    // // Animate each character
-    gsap.set(split.chars, {
-      x: () => Math.random() * 300 - 150,
-      y: () => Math.random() * 200 - 100,
-      rotation: () => Math.random() * 720 - 360,
-      opacity: 0,
-    });
+useEffect(() => {
+    // 2. Create the GSAP Context
+    let ctx = gsap.context(() => {
+        
+        // --- YOUR ANIMATIONS GO HERE ---
+        
+        const timeLine = gsap.timeline();
+        BackgroundStart('.background-gr', timeLine);
+        Chocobar(timeLine);
 
-    gsap.to(split.chars, {
-      x: 0,
-      y: 0,
-      rotation: 0,
-      opacity: 1,
-      duration: 1.5,
-      ease: 'expo.out',
-      stagger: 0.05,
-      delay : 3
-    });
-  }, []);
+        // Split the text
+        // Note: Ideally use .revert() instead of .kill() if you want the text to go back to normal DOM
+        const split = SplitText.create(textRef.current, { type: 'chars' });
 
-  useEffect(() => {
-    gsap.fromTo(
-      ".gsap-button",
-      { opacity: 0, y: -200 },
-      { opacity: 1, y: 0, delay: 4 }
-    );
-  }, []);
+        // Animate characters
+        gsap.set(split.chars, {
+            x: () => Math.random() * 300 - 150,
+            y: () => Math.random() * 200 - 100,
+            rotation: () => Math.random() * 720 - 360,
+            fontFamily : "Aboreto",
+            opacity: 0,
+        });
+
+        gsap.to(split.chars, {
+            x: 0,
+            y: 0,
+            rotation: 0,
+            opacity: 1,
+            duration: 1.5,
+            ease: 'expo.out',
+            stagger: 0.05,
+            delay: 3
+        });
+
+        // The Button Animation (Moved inside the same context)
+        gsap.fromTo(
+            ".gsap-button",
+            { opacity: 0, y: -200 },
+            { opacity: 1, y: 0, delay: 4 }
+        );
+
+        gsap.fromTo(
+          ".gsap-button",
+          { opacity: 0, y: -200 },
+          { opacity: 1, y: 0, delay: 4 }
+        );
+    }, containerRef); // Scope selector (optional, pass your main div ref here if you have one)
+
+    // 3. THE MAGIC FIX: Revert everything on cleanup
+    return () => {
+        ctx.revert(); 
+    };
+
+}, []);
 
   return (
     <>
+      <Outlet />  
       <main className="home background-gr flex">
         <Navbar />
         <div className="textHomeChocoPebble flex">
           <span ref={textRef} className="textSpan">Choco-Pebble</span>
         </div>
 
-        <div className="chocobars flex">
+        <div ref={containerRef} className="chocobars flex">
           <div className="bar1 bars">
             <img src={chocobar} className="bar-img1 bar-img" />
           </div>
@@ -107,10 +133,15 @@ function Home() {
       </main>
 
       <HC HR_ref={HR_ref} />
+
       <Menu />
+
       <Buy heading={"Crafted for Chocolate Lovers"} what={"chocolate"} />
+
       <Buy heading={"Taste the Frozen Delight"} what={"icecream"} />
+
       <Discript/>
+
       <PageFooter/>
     </>
   );

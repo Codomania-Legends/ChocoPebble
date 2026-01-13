@@ -57,11 +57,10 @@
     position: absolute;
     z-index: 5;
     font-size: xx-large;
-    font-family: "Agbalumo";
     color: white;
-}
-.textSpan {
-  font-size: xx-large;
+  }
+  .textSpan {
+    font-size: xx-large;
 }
 .gsap-button{
   opacity: 0;

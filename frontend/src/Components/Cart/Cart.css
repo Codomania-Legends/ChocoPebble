@@ -1,9 +1,14 @@
 .main-div-cart {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    width: 60vw;
+    height: 90vh;
     background-color: #2b160e;
     overflow: hidden;
+    z-index: 100;
+    right: -99%;
+    bottom: 0;
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
 }
 
 .cartbg-img-div {
