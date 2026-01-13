@@ -1,0 +1,79 @@
+.container-hc{
+    height : 100vh;
+    width : 300vw;
+    background-color: #D6C0B3;
+    overflow: hidden;
+}
+.slider-hc{
+    position: relative;
+    height : 100%;
+    width : 100%;
+    font-size: 4.5em;
+    font-family: "Aboreto";
+    background-image: url("/horizontalBlur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* opacity: 0.8; */
+}
+.horizontalBlurBack{
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+}
+.text-text-hc{
+    color: white;
+}
+/* .text-hc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+} */
+.image-hc-of{
+    opacity: 1;
+    height: 100%;
+}
+.image-hc-comma{
+    opacity: 1;
+    height: 1em;
+}
+
+.img1-hc , .img2-hc , .img3-hc , .img4-hc, .img5-hc, .img6-hc, .img7-hc , .img8-hc{
+    position: absolute;
+}
+.img1-hc{
+    top: 5%;
+    left: 2%;
+}
+.img2-hc{
+    bottom: 10%;
+    left: 10%;
+}
+.img3-hc{
+    top: 25%;
+    left: 25%;
+    height: 1.2em;
+    rotate: 30deg;
+}
+.img4-hc{
+    bottom: 10%;
+    left: 35%;
+}
+.img5-hc{
+    top: 20%;
+    left: 43%;
+    height: 20%;
+}
+.img6-hc{
+    bottom: 5%;
+    left: 60%;
+}
+.img7-hc{
+    top: 30%;
+    left: 65%;
+    height: 1em;
+    aspect-ratio: 1/1;
+}
+.img8-hc{
+    top: 20%;
+    right: 5%;
+}

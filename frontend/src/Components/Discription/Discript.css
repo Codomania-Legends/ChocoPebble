@@ -1,0 +1,35 @@
+.describe-box{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(#FFFFFF 47%, #482619 100%);
+
+}
+.describe-img-box{
+    height: 100%;
+    width: 40%;
+}
+.describe-text-box{
+    height: 100%;
+    width: 60%;
+    flex-direction: column;
+}
+.chocoadust {
+    position: absolute;
+    z-index: 0;
+    left: 12%;
+}
+.heading {
+    font-family: Agbalumo;
+    height: 30%;
+}
+.downspan {
+    font-family: Afacad;
+    height: 50%;
+    width: 65%;
+    align-items: start;
+    font-size: large;
+    text-align: center;
+}
+.chocoainfo{
+    z-index: 1;
+}

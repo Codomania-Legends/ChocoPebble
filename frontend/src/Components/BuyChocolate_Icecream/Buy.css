@@ -1,0 +1,72 @@
+main.buySection.background-gr {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+.heading-buy {
+    height: 25%;
+    width: 100%;
+    font-size: 2.5em;
+    font-family: "Gabarito";
+    color: #4D1205;
+}
+.mainBuyComponent{
+    height: 100%;
+    flex-direction: column;
+}
+.buyBlock.flex {
+    flex-direction: column;
+    width: 20%;
+    height: 40%;
+}
+.componentBuySectionDivs {
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 3%;
+}
+.blobkbuyDiv {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 2em;
+    color: #4D1205;
+    font-family: "Gabarito";
+    font-size: small;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+.blobkbuyDiv:hover{
+    background:  rgba(255 255 255 / 50%) ;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+    transition: 0.5s;
+}
+img.buyImage {
+    height: 5em;
+}
+.buyName {
+    font-size: medium;
+    font-weight: bold;
+}
+.options-buy.flex {
+    width: 75%;
+    justify-content: space-between;
+}
+.recommend-buy, .new-buy {
+    padding: 0.2em 0.5em;
+    background: #4D1205;
+    color: white;
+    border-radius: 2em;
+}
+.namePrice-buy {
+    flex-direction: column;
+    width: 75%;
+}
+.brandPriceLike-buy.flex {
+    width: 100%;
+    justify-content: space-between;
+}
+.gmCart.flex {
+    width: 100%;
+    justify-content: space-between;
+}

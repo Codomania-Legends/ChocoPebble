@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "img": "aamchi_mango.png",
+        "name": "Aamchi Mango Ice Cream",
+        "describe": "a refreshing mango-flavored ice cream packed in a vibrant, colorful box.",
+        "company": "Hocco",
+        "gm": "120gm",
+        "price": "₹150"
+        
+    },
+    {
+        "id": 2,
+        "img": "aamchi_mango.png",
+        "name": "Hershey's Exotic Dark Primium",
+        "describe": "A rich, velvety indulgence crafted from the finest exotic dark chocolate. 🍫",
+        "company": "Hershey's",
+        "gm": "90Gm",
+        "price": "₹150"
+        
+    },
+    {
+        "id": 3,
+        "img": "aamchi_mango.png",
+        "name": "Exotic HomeMade Chocolate Combo",
+        "describe": "A delightful blend of handcrafted chocolates bursting with rich, premium flavors.",
+        "company": "Exotic",
+        "gm": "500Gm",
+        "price": "₹599"
+        
+    }
+]

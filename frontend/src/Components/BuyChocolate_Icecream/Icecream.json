@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Vanilla Swirl",
+    "brand": "CoolCreams",
+    "price": 60,
+    "gm": "100ml",
+    "recommend": false,
+    "new": false
+    ,"image" : "/buy1.png"
+  },
+  {
+    "name": "Berry Blast",
+    "brand": "FruityFreeze",
+    "price": 90,
+    "gm": "2 scoops",
+    "recommend": true,
+    "new": true
+    ,"image" : "/buy2.png"
+  },
+  {
+    "name": "Choco Lava",
+    "brand": "ChillBar",
+    "price": 110,
+    "gm": "150ml",
+    "recommend": false,
+    "new": true
+    ,"image" : "/buy3.png"
+  },
+  {
+    "name": "Minty Cool",
+    "brand": "FreshScoops",
+    "price": 70,
+    "gm": "120ml",
+    "recommend": true,
+    "new": false
+    ,"image" : "/buy4.png"
+  },
+  {
+    "name": "Tutti Frutti Twist",
+    "brand": "HappyCream",
+    "price": 95,
+    "gm": "3 scoops",
+    "recommend": false,
+    "new": true
+    ,"image" : "/buy5.png"
+  },
+  {
+    "name": "Coffee Rush",
+    "brand": "MochaChill",
+    "price": 100,
+    "gm": "100ml",
+    "recommend": true,
+    "new": false
+    ,"image" : "/buy6.png"
+  },
+  {
+    "name": "Kesar Magic",
+    "brand": "RoyalTaste",
+    "price": 120,
+    "gm": "2 scoops",
+    "recommend": false,
+    "new": false
+    ,"image" : "/buy7.png"
+  },
+  {
+    "name": "Bubblegum Bliss",
+    "price": 85,
+    "gm": "1 scoop",
+    "recommend": false,
+    "new": true
+    ,"image" : "/buy8.png"
+  },
+  {
+    "name": "Dark Desire",
+    "brand": "CocoaCold",
+    "price": 130,
+    "gm": "200ml",
+    "recommend": true,
+    "new": true
+    ,"image" : "/buy1.png"
+  },
+  {
+    "name": "Lemon Zing",
+    "brand": "ZestChill",
+    "price": 75,
+    "gm": "1 scoop",
+    "recommend": true,
+    "new": false
+    ,"image" : "/buy2.png"
+  }
+]
+

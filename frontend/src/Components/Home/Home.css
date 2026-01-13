@@ -1,0 +1,68 @@
+.home {
+    height: 100vh;
+    /* background-color: rgb(69, 117, 101); */
+    width: 100%;
+    flex-direction: column;
+}
+.chocobars{
+  height: 100vh;
+}
+
+.bars{
+  position: absolute;
+  height: 35%;
+  z-index: 4;
+}
+.bar-img{
+  height: 100%;
+}
+.chocolate-splash-left, .chocolate-splash-right {
+  position: absolute;
+  z-index: 3;
+}
+.splash-right, .splash-left {
+  opacity: 0;
+}
+.chippy{
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+.home-button {
+    height: 20vh;
+    width: 100%;
+    align-items: start;
+}
+.btn {
+    border: none;
+    outline: none;
+    background-color: #834719;
+    color: #ED9742;
+    border-radius: 0.5em;
+    text-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+    padding: 0.7em 1em;
+    font-family: 'Gabarito';
+    width: 8%;
+    justify-content: space-evenly;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+.btn:hover{
+  background-color: #ED9742;
+  color: #834719;
+  box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+  transition: 0.25s;
+}
+.textHomeChocoPebble.flex {
+    position: absolute;
+    z-index: 5;
+    font-size: xx-large;
+    font-family: "Agbalumo";
+    color: white;
+}
+.textSpan {
+  font-size: xx-large;
+}
+.gsap-button{
+  opacity: 0;
+}

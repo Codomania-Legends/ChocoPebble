@@ -1,0 +1,77 @@
+
+.nav-main {
+    height: 10%;
+    width: 80%;
+    font-family: "Gabarito";
+    font-size: small;
+    justify-content: space-around;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: #4D1205;
+}
+
+.nav-main-left, .nav-main-right {
+    height: 100%;
+    width: 15%;
+    color: #4D1205;
+}
+.logo.flex {
+    height: 100%;
+    width: 100%;
+}
+.Choco-Pebble-logo{
+    height: 80%;
+}
+section.nav-main-right.flex {
+    justify-content: space-evenly;
+}
+.nav-main-center.flex {
+    height: 100%;
+    width: 30%;
+    color: #4D1205;
+    justify-content: space-around;
+}
+
+.heart1 , .heart2 , .heart{
+    position: absolute;
+}
+.heart{
+    z-index: 2;
+}
+.home-like , .home-cart , .home-dot-menu {
+    height: 20%;
+    width: 20%;
+    cursor: pointer;
+}
+.cloud, .cart{
+    position: absolute;
+}
+.cart{
+    /* opacity: 0; */
+    z-index: 9;
+}
+.cloud {
+    font-size: smaller;
+    opacity: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.gsap{
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+.gsap:hover{
+    transform: scale(1.2);
+    text-shadow: 4px 4px 4px #4d120550;
+    transition: 0.5s;
+}
+.aboutus-navbar{
+    color: white;
+}

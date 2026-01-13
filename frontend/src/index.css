@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Gabarito';
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow{
+  filter: drop-shadow(0 4px 4px rgb( 0 0 0 / 25% ));
+}
+
+body , #root{
+    width : 100vw;
+    overflow-x: hidden;
+    background-color: #D6C0B3;
+}
+
+.background-gr{
+    --p : #D6C0B3;
+    --s : #D6C0B3;
+    background-image: linear-gradient( to bottom , var(--p) , var(--s) ) ;
+}
+button {
+    border: none;
+    outline: none;
+}
