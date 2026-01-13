@@ -1,0 +1,104 @@
+.main-div {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b160e; /* Fallback chocolate color */
+}
+
+.likebg-img-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content-layer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Base Card Style (Matches your second image) */
+.product-card {
+    background: #1e0d07;
+    border-radius: 65px;
+    transition: all 0.3s ease;
+    color: white;
+    height: 20em;
+    width: 20em;
+    flex-direction: column;
+}
+
+/* Hover State (Matches your first image) */
+.product-card:hover {
+    border: 2px solid #00a2ff; /* The bright blue border */
+}
+
+.img-section {
+    margin-bottom: 30px;
+    height: 5em;
+    width: 10em;
+}
+h1.wishlist-title {
+    color: white;
+}
+.product-img {
+    /* width: 250px; */
+    /* filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5)); */
+    height: 100%;
+    /* width: 89%; */
+}
+
+.title-row h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.brand {
+    color: #b1b1b1;
+    margin: 5px 0 20px 0;
+}
+
+.price-row {
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Heart Icon Styling */
+.heart-toggle {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-left: 1em;
+}
+
+.filled {
+    color: #ffffff80; /* Red when filled */
+}
+
+.hollow {
+    color: #9c9c9c; /* Gray when hollow */
+}
+
+
+
+
+.add-btn {
+    background: white;
+    color: #2b160e;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
