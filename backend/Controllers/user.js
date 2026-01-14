@@ -2,13 +2,22 @@ import USER from "../Models/user.js";
 import { GetAllUsers_EmailID, GetSingleSpecificUser } from "../Services/user.js";
 import bcrypt from "bcrypt"
 
-function HandleLoginUser(req , res){
-    
+export async function HandleLoginUser(req , res){
+    try {
+        const {username , email , password} = req.body
+        const user = await GetSingleSpecificUser(username, email, password)
+        console.log(user);
+        
+        if(!user) throw(new Error("User Not Found"))
+        res.json({msg:"User Logged in"})
+    } catch (error) {
+        res.json({msg : "Some Error Occured" , error:error.message })
+    }
 }
 
 export async function HandleSignupUser(req, res) {
     try {
-        let { username, email, password } = req.body;
+        const { username, email, password } = req.body;
 
         const alreadyUser = await GetSingleSpecificUser(username, email, password);
 
@@ -45,11 +54,9 @@ export async function HandleSignupUser(req, res) {
 
         if (!newUser) throw new Error("Internal Error");
 
-        res.send("User Created");
-        console.log("pass : " ,password);
+        res.json({msg : "User Created"});
 
     } catch (error) {
-        console.log(error);
-        res.send(error.message);
+        res.json({msg : error.message , error});
     }
 }
