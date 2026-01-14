@@ -77,7 +77,7 @@ export async function SetDiscount_Product( req , res ) {
 export async function RemoveProduct_from_Collection(req , res) {
     try {
         const {productID} = req.params
-        await PRODUCT.findOneAndDelete({productID : id})
+        await PRODUCT.findOneAndDelete({productID})
         res.json({
             msg : "Done"
         })

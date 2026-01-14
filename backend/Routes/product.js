@@ -18,4 +18,7 @@ PRODUCT_ROUTER.patch( "/set/discount" , SetDiscount_Product )
 // Delete Product
 PRODUCT_ROUTER.delete( "/delete/:productID" , RemoveProduct_from_Collection )
 
+// Get all Products
+PRODUCT_ROUTER.get( "/all" ,  )
+
 export default PRODUCT_ROUTER
