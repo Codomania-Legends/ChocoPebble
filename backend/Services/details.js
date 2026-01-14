@@ -1,5 +1,5 @@
-import PREFERENCE from "../Models/preference"
-import PRODUCT from "../Models/product"
+import PREFERENCE from "../Models/preference.js"
+import PRODUCT from "../Models/product.js"
 
 export async function GetAllDetails( req , res ) {
     try {

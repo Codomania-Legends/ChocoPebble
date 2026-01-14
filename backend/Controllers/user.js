@@ -38,7 +38,7 @@ export async function HandleSignupUser(req, res) {
         const allLinkedAccounts = anotherAcc.map(account => ({
             username: account.username,
             email: account.email,
-            userId : userId
+            userId : account.userId
         }));
 
         await USER.updateMany(

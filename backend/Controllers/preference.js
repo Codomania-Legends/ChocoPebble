@@ -1,22 +1,26 @@
-import PREFERENCE from "../Models/preference"
+import PREFERENCE from "../Models/preference.js"
 
  export async function HandleLikedProducts( req ,res ) {
     try {
         const {userID, productID, username} = req.body
-        const preference = await PREFERENCE.findOne({
-            userID, productID, username
+        let preference = await PREFERENCE.findOne({
+            userID, username
         })
         if( !preference ) {
-            await PREFERENCE.create({
+            preference = await PREFERENCE.create({
                 userID, username, liked : [{productID}]
             })
         } else {
-            await PREFERENCE.findOneAndUpdate({
-                userID, productID, username
+            preference = await PREFERENCE.findOneAndUpdate({
+                userID, username
             } , {
                 $addToSet : { liked : {productID} }
             })
         }
+        res.json({
+            msg : "Product Added in Liked Section",
+            product : preference
+        })
     } catch (error) {
         res.json({
             msg : "Something Happened",
@@ -28,20 +32,24 @@ import PREFERENCE from "../Models/preference"
 export async function HandleCartProducts( req ,res ) {
     try {
         const {userID, productID, username} = req.body
-        const preference = await PREFERENCE.findOne({
-            userID, productID, username
+        let preference = await PREFERENCE.findOne({
+            userID, username
         })
         if( !preference ) {
-            await PREFERENCE.create({
+            preference = await PREFERENCE.create({
                 userID, username, cart : [{productID}]
             })
         } else {
-            await PREFERENCE.findOneAndUpdate({
-                userID, productID, username
+            preference = await PREFERENCE.findOneAndUpdate({
+                userID, username
             } , {
                 $addToSet : { cart : {productID} }
             })
         }
+        res.json({
+            msg : "Product Added in Cart Section",
+            product : preference
+        })
     } catch (error) {
         res.json({
             msg : "Something Happened",

@@ -1,5 +1,5 @@
 import express from "express"
-import { HandleCartProducts, HandleLikedProducts } from "../Controllers/preference"
+import { HandleCartProducts, HandleLikedProducts } from "../Controllers/preference.js"
 
 const PREFERENCE_Router = express.Router()
 

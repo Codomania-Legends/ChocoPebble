@@ -1,5 +1,6 @@
 import express from "express"
 import { HandleCreateProduct, HandleGetSpecificProduct, RemoveProduct_from_Collection, SetDiscount_Product, SetRecommended_Products } from "../Controllers/product.js"
+import { GetAllDetails } from "../Services/details.js"
 
 const PRODUCT_ROUTER  = express.Router()
 
@@ -19,6 +20,6 @@ PRODUCT_ROUTER.patch( "/set/discount" , SetDiscount_Product )
 PRODUCT_ROUTER.delete( "/delete/:productID" , RemoveProduct_from_Collection )
 
 // Get all Products
-PRODUCT_ROUTER.get( "/all" ,  )
+PRODUCT_ROUTER.get( "/all" , GetAllDetails )
 
 export default PRODUCT_ROUTER
