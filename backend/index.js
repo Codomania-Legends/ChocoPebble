@@ -2,6 +2,7 @@ import "dotenv/config"
 import express from "express"
 import Connect_MongoDB from "./connect.js"
 import USER_ROUTER from "./Routes/user.js"
+import PRODUCT_ROUTER from "./Routes/product.js"
 
 const app = express()
 const PORT = process.env.PORT ?? 5000
@@ -24,12 +25,11 @@ Connect_MongoDB
 // ------------------------------------------------------ //
 
 // Routes
-app.get("/" , (req , res) => {
-    res.send("Hello")
-})
+app.use("/user" , USER_ROUTER)
+app.use("/product" , PRODUCT_ROUTER)
+
 // Routes
 
-app.use("/user" , USER_ROUTER)
 
 // ------------------------------------------------------ //
 
