@@ -1,4 +1,5 @@
 import USER from "../Models/user.js";
+import bcrypt from "bcrypt"
 
 export async function GetAllUsers() {
     try {
@@ -10,10 +11,14 @@ export async function GetAllUsers() {
     }
 }
 
-export async function GetSingleSpecificUser(username , email) {
+export async function GetSingleSpecificUser(username, email, password) {
     try {
         const user = await USER.findOne({"username":username,"email":email})
-        return user
+        
+        const isMatch = await bcrypt.compare(password , user.password)
+
+        return isMatch ? user : undefined
+
     } catch (error) {
         console.log(error);
         return undefined

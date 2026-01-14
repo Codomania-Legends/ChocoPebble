@@ -1,5 +1,6 @@
 import USER from "../Models/user.js";
 import { GetAllUsers_EmailID, GetSingleSpecificUser } from "../Services/user.js";
+import bcrypt from "bcrypt"
 
 function HandleLoginUser(req , res){
     
@@ -7,12 +8,11 @@ function HandleLoginUser(req , res){
 
 export async function HandleSignupUser(req, res) {
     try {
-        const { username, email, password } = req.body;
+        let { username, email, password } = req.body;
 
-        const alreadyUser = await GetSingleSpecificUser(username, email);
-        console.log(alreadyUser);
+        const alreadyUser = await GetSingleSpecificUser(username, email, password);
 
-        if (alreadyUser) throw new Error("User Already Logged IN");
+        if (alreadyUser) throw new Error("User Already exists");
 
         const anotherAcc = await GetAllUsers_EmailID(email);
 
@@ -33,16 +33,20 @@ export async function HandleSignupUser(req, res) {
             }
         );
 
+        const salt = await bcrypt.genSalt(10)
+        const hashedPass = await bcrypt.hash(password , salt)
+
         const newUser = await USER.create({
             email,
             username,
-            password,
+            password : hashedPass,
             anotherAccount: allLinkedAccounts
         });
 
         if (!newUser) throw new Error("Internal Error");
 
         res.send("User Created");
+        console.log("pass : " ,password);
 
     } catch (error) {
         console.log(error);
