@@ -1,7 +1,7 @@
 import PREFERENCE from "../Models/preference"
 import PRODUCT from "../Models/product"
 
-async function GetAllDetails( req , res ) {
+export async function GetAllDetails( req , res ) {
     try {
         const products = await PRODUCT.find({})
         const preference = await PREFERENCE.find({})

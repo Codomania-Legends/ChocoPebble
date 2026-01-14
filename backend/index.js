@@ -5,6 +5,7 @@ import USER_ROUTER from "./Routes/user.js"
 import PRODUCT_ROUTER from "./Routes/product.js"
 import PREFERENCE_Router from "./Routes/preference.js"
 import { GetAllDetails } from "./Services/details.js"
+import cors from "cors"
 
 const app = express()
 const PORT = process.env.PORT ?? 5000
@@ -14,6 +15,7 @@ const PORT = process.env.PORT ?? 5000
 // MiddleWares
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.use(cors())
 // MiddleWares
 
 // ------------------------------------------------------ //
