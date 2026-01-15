@@ -1,16 +1,15 @@
 .main-div-cart {
     position: absolute;
-    width: 60vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     background-color: #2b160e;
     overflow: hidden;
     z-index: 100;
     right: -99%;
     bottom: 0;
-    border-top-left-radius: 0em;
-    border-bottom-left-radius: 0em;
+    /* border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em; */
 }
-
 .cartbg-img-div {
     position: absolute;
     width: 100%;
@@ -22,7 +21,7 @@
 .content-layer-cart {
     position: relative;
     z-index: 10;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
@@ -41,7 +40,7 @@ h1.cart-title {
     width: 100%;
     background: rgba(30, 13, 7, 0.4); /* Dark semi-transparent overlay */
     border-radius: 30px;
-    padding: 40px;
+    padding: 20px;
 }
 
 /* Shared Grid Layout for Header and Items */
@@ -62,9 +61,9 @@ h1.cart-title {
 
 /* The actual row styling */
 .cart-item {
-    background: #1e0d07; /* Solid dark brown row */
-    padding: 15px 25px;
-    border-radius: 50px;
+    background: #1e0d07;
+    padding: 10px 25px;
+    border-radius: 25px;
     color: white;
 }
 

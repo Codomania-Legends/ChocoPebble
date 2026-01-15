@@ -24,15 +24,17 @@ function Cart() {
     useEffect( () => {
         gsap.fromTo( ".main-div-cart" , 
             {
-                right : "-100%"
+                right : "-100%",
+                opacity : 0
             },
             
             {
             right : -15,
-            borderTopLeftRadius : "5em",
-            borderBottomLeftRadius : "5em",
-            ease : "back.inOut",
+            // borderTopLeftRadius : "5em",
+            // borderBottomLeftRadius : "5em",
+            ease : "bounce.out",
             duration : 2,
+            opacity : 1
         } )
     } , [] )
     
@@ -42,18 +44,19 @@ function Cart() {
                 gsap.to(".main-div-cart",{
                     right : "-100%",
                     duration : 2,
-                    ease : "back.inOut",
+                    // ease : "power.inOut",
                     onComplete : () => navigate("/")
                 })
             }} style={{
-                position : "absolute",
-                right : "10%",
-                top : 10,
-                color : 'white',
-                fontSize : "xxx-large",
-                zIndex : 1,
+                position: 'absolute',
+                right: '3%',
+                top: '1em',
+                color: 'white',
+                fontSize: 'x-large',
+                zIndex: 1,
+                fontFamily: 'Gabarito',
 
-            }}>X</span>
+            }}><i class="fa-solid fa-xmark"></i></span>
             <img src={LikedBG} alt="background" className='cartbg-img-div'/>
 
             <div className="content-layer-cart">

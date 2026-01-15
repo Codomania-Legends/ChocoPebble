@@ -1,104 +1,180 @@
-.main-div {
-    position: relative;
-    width: 100vw;
+/* Container: This stays hidden off-screen without affecting site width */
+.main-div-liked {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2b160e; /* Fallback chocolate color */
+    background-color: #2b160e;
+    z-index: 9999; /* Ensure it's above everything */
+    overflow: hidden;
+    transform: translateX(-100%); /* Initial state for GSAP */
 }
 
-.likebg-img-div {
+.liked-bg-img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    opacity: 0.5;
 }
 
-.content-layer {
+.liked-content-wrapper {
     position: relative;
     z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.close-icon-liked {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.wishlist-title {
+    color: white;
+    font-size: 2.5rem;
+    /* margin-bottom: 30px; */
+    font-weight: 700;
+    margin: 15px;
+    text-align: center;
+}
+
+/* Card: Responsive Logic */
+/* Card: Responsive Logic */
+.liked-product-card {
+    background: #1e0d07;
+    border-radius: 30px; /* Changed from 3em for better mobile scaling */
+    border: 1px solid #3d2015;
+    color: white;
+    
+    /* THE FIX: Use width for mobile, max-width for desktop */
+    width: 20%; 
+    
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    transition: 0.3s;
+}
+.content-container{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* Base Card Style (Matches your second image) */
-.product-card {
-    background: #1e0d07;
-    border-radius: 65px;
-    transition: all 0.3s ease;
-    color: white;
-    height: 20em;
-    width: 20em;
-    flex-direction: column;
+.liked-img-box {
+    height: 120px; /* Use px instead of em for consistent scaling */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-/* Hover State (Matches your first image) */
-.product-card:hover {
-    border: 2px solid #00a2ff; /* The bright blue border */
+/* Updated Media Query for 400px and smaller */
+@media (max-width: 400px) {
+    .liked-product-card {
+        width: 95%; /* Take more space on tiny screens */
+        padding: 15px;
+        border-radius: 20px;
+    }
+    .wishlist-title {
+        font-size: 1.6rem;
+        margin: 10px;
+    }
+    .liked-h2 {
+        font-size: 1rem;
+    }
+    .liked-img-box {
+        height: 100px;
+    }
 }
 
-.img-section {
-    margin-bottom: 30px;
+
+
+.liked-product-card:hover {
+    border-color: #00a2ff;
+}
+
+.liked-img-box {
     height: 5em;
-    width: 10em;
-}
-h1.wishlist-title {
-    color: white;
-}
-.product-img {
-    /* width: 250px; */
-    /* filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5)); */
-    height: 100%;
-    /* width: 89%; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.title-row h2 {
-    font-size: 1.4rem;
+.liked-img-box img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.liked-h2 {
+    font-size: 1.2rem;
     margin: 0;
     font-weight: 700;
 }
 
-.brand {
+.liked-brand {
     color: #b1b1b1;
-    margin: 5px 0 20px 0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-.price-row {
+.liked-price-row {
+    display: flex;
     justify-content: space-between;
     font-weight: bold;
     font-size: 1.1rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-/* Heart Icon Styling */
+/* Icons */
 .heart-toggle {
     cursor: pointer;
-    font-size: 1.5em;
-    margin-left: 1em;
+    font-size: 1.3rem;
 }
+.filled { color: #ffffff; }
+.hollow { color: #9c9c9c; }
 
-.filled {
-    color: #ffffff80; /* Red when filled */
-}
-
-.hollow {
-    color: #9c9c9c; /* Gray when hollow */
-}
-
-
-
-
-.add-btn {
+/* Button */
+.liked-add-btn {
     background: white;
     color: #2b160e;
     border: none;
-    padding: 10px 30px;
+    padding: 12px;
     border-radius: 30px;
     font-weight: bold;
-    font-size: 1rem;
+    width: 100%;
     cursor: pointer;
+}
+
+/* SPECIFIC FIX FOR 400PX WIDTH */
+@media (max-width: 400px) {
+    .liked-product-card {
+        padding: 15px;
+        max-width: 300px;
+    }
+    .wishlist-title {
+        font-size: 1.8rem;
+    }
+    .liked-h2 {
+        font-size: 1.1rem;
+    }
+}
+.d-flex.flex-column.align-items-center.py-5.content-container.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: 65%; */
+}
+.info-ka-dabba {
+    display: flex;
+    justify-content: space-between;
 }
