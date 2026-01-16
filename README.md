@@ -17,10 +17,6 @@ It includes a modern **React frontend** and a powerful **backend** for handling 
   - [Backend Setup](#backend-setup)<br>
 - [▶️ Running the Project](#️-running-the-project)<br>
 - [📸 Screenshots](#-screenshots)<br>
-- [🌐 API Endpoints](#-api-endpoints)<br>
-- [🤝 Contributing](#-contributing)<br>
-- [🧑‍💻 Team](#-team)<br>
-- [📄 License](#-license)<br>
 
 ---
 
