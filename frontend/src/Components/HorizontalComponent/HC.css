@@ -1,79 +1,71 @@
-.container-hc{
-    height : 100vh;
-    width : 300vw;
+.container-hc {
+    height: 100vh;
+    width: 300vw;
     background-color: #D6C0B3;
     overflow: hidden;
 }
-.slider-hc{
+
+.slider-hc {
     position: relative;
-    height : 100%;
-    width : 100%;
-    font-size: 4.5em;
+    height: 100%;
+    width: 100%;
+    
+    /* DEFAULT (Desktop) - Large and impact */
+    font-size: 4.5em; 
+    
     font-family: "Aboreto";
     background-image: url("/horizontalBlur.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* opacity: 0.8; */
-}
-.horizontalBlurBack{
-    position: absolute;
-    height: 100%;
-    z-index: 1;
-}
-.text-text-hc{
-    color: white;
-}
-/* .text-hc {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-} */
-.image-hc-of{
-    opacity: 1;
-    height: 100%;
-}
-.image-hc-comma{
-    opacity: 1;
-    height: 1em;
 }
 
-.img1-hc , .img2-hc , .img3-hc , .img4-hc, .img5-hc, .img6-hc, .img7-hc , .img8-hc{
+.text-text-hc {
+    color: white;
+    white-space: nowrap;
+}
+
+/* Image Helpers */
+.image-hc-of { opacity: 1; height: 100%; max-height: 1.2em; }
+.image-hc-comma { opacity: 1; height: 1em; }
+
+/* Positions */
+.img1-hc, .img2-hc, .img3-hc, .img4-hc, .img5-hc, .img6-hc, .img7-hc, .img8-hc {
     position: absolute;
+    z-index: 2;
 }
-.img1-hc{
-    top: 5%;
-    left: 2%;
+
+.img1-hc { top: 15%; left: 2%; width: 150px; }
+.img2-hc { bottom: 15%; left: 10%; width: 80px; }
+.img3-hc { top: 25%; left: 25%; height: 1.2em; rotate: 30deg; }
+.img4-hc { bottom: 20%; left: 35%; width: 100px; }
+.img5-hc { top: 20%; left: 43%; height: 20%; }
+.img6-hc { bottom: 15%; left: 60%; width: 90px; }
+.img7-hc { top: 30%; left: 65%; height: 1em; aspect-ratio: 1/1; }
+.img8-hc { top: 20%; right: 5%; width: 120px; }
+
+/* =========================================
+   📱 RESPONSIVE ADJUSTMENTS 📱
+   ========================================= */
+
+/* 1. TABLET (iPad, Small Laptops) - Width < 1024px */
+@media (max-width: 1024px) {
+    .slider-hc {
+        /* Reduce slightly from desktop, but keep it big */
+        font-size: 3.5rem; 
+    }
 }
-.img2-hc{
-    bottom: 10%;
-    left: 10%;
-}
-.img3-hc{
-    top: 25%;
-    left: 25%;
-    height: 1.2em;
-    rotate: 30deg;
-}
-.img4-hc{
-    bottom: 10%;
-    left: 35%;
-}
-.img5-hc{
-    top: 20%;
-    left: 43%;
-    height: 20%;
-}
-.img6-hc{
-    bottom: 5%;
-    left: 60%;
-}
-.img7-hc{
-    top: 30%;
-    left: 65%;
-    height: 1em;
-    aspect-ratio: 1/1;
-}
-.img8-hc{
-    top: 20%;
-    right: 5%;
+
+/* 2. MOBILE (Phones) - Width < 768px */
+@media (max-width: 768px) {
+    .slider-hc {
+        /* INCREASED from 1.5rem to 2.5rem */
+        /* This makes the text look bigger and bolder on small screens */
+        font-size: 2.5rem; 
+    }
+
+    /* Tweaked images to fit the new larger text layout */
+    .img1-hc { top: 5%; width: 70px; } 
+    .img2-hc { bottom: 25%; width: 45px; }
+    .img4-hc { bottom: 25%; width: 55px; }
+    .img8-hc { width: 65px; top: 15%; }
 }

@@ -5,21 +5,23 @@ import AboutUS from "./Components/AboutUS/AboutUS.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Liked from "./Components/Liked/Liked.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
-import Login from "./Components/Login_Signup/Login.jsx";
+import Login from "./Components/LoginSignup/Login.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css'; // <--- Add this! 🚨
+import 'bootstrap/dist/js/bootstrap.bundle.min'; // <--- Add this for the toggle to work!
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
 
       <Route path="/" element={<Home />}>
-
         <Route path="cart" element={ <Cart/> } />
         <Route path="liked" element={ <Liked/> } />
-
       </Route>
 
       <Route path="/aboutus" element={<AboutUS />} />
+
       <Route path="/login" element={<Login/>} />
+
     </Routes>
   </BrowserRouter>
 );

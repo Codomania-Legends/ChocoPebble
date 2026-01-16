@@ -13,7 +13,7 @@
   filter: drop-shadow(0 4px 4px rgb( 0 0 0 / 25% ));
 }
 
-body , #root{
+html ,body , #root{
     width : 100vw;
     overflow-x: hidden;
     background-color: #D6C0B3;
