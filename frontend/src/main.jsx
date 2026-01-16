@@ -5,6 +5,7 @@ import AboutUS from "./Components/AboutUS/AboutUS.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Liked from "./Components/Liked/Liked.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
+import Login from "./Components/Login_Signup/Login.jsx";
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
       </Route>
 
       <Route path="/aboutus" element={<AboutUS />} />
+      <Route path="/login" element={<Login/>} />
     </Routes>
   </BrowserRouter>
 );
