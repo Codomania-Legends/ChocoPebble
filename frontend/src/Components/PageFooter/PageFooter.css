@@ -79,3 +79,124 @@
     height: 30%;
     width: 30%;
 }
+@media (max-width: 600px) {
+
+  .page-footer {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(#4B281A 0%, #1A0902 100%);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    overflow: hidden;
+  }
+
+  /* ✅ Splash background behind */
+  .splashing {
+    position: absolute;
+    width: 160%;
+    height: auto;
+    left: -35%;
+    top: 5%;
+    opacity: 0.18;
+    rotate: -30deg;
+    z-index: 0;
+  }
+
+  /* ✅ Top content */
+  .web-name {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .extra-info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 60vh;
+  }
+  .extra-head {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .extra-head h1 {
+    letter-spacing: 1px;
+  }
+
+      .extra-info-span {
+        width: 80%;
+        letter-spacing: 1px;
+    }
+
+  /* ✅ Icons centered in a single row */
+      .website-icons {
+        width: 70%;
+        height: 15%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+  .icon-ka-baksa {
+    height: 18px;
+    width: 18px;
+  }
+
+  .icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* ✅ Bottom section */
+  .copyright-support {
+    height: auto;
+    width: 100%;
+    padding-top: 18px;
+    margin-top: 15px;
+    z-index: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /* ✅ Left column */
+  .naming-section {
+    width: 60%;
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copyright,
+  .anshul,
+  .vidhi {
+    height: auto;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* ✅ Right column */
+  .policy-section {
+    width: 40%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .privacy,
+  .termsandcondition {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    letter-spacing: 1px;
+    justify-content: flex-end;
+  }
+}

@@ -4,12 +4,135 @@
     width: 100%;
     object-fit: cover;
 }
+/* Default background image */
 .log-bg-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
+
+/* ✅ When screen width <= 700px: remove image and apply color */
+/* ✅ 1px to 600px perfect centered design */
+@media (max-width: 600px) {
+
+  /* hide bg image and use solid color */
+  .log-bg-img {
+    display: none;
+  }
+
+  .main-div-log {
+    background-image: url("/mobileSize.png"); /* ✅ correct path if file in public */
+    background-size: cover;                  /* ✅ fills screen properly */
+    background-position: center;             /* ✅ keeps image centered */
+    background-repeat: no-repeat;            /* ✅ no repeat */
+    
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    height: 100vh;                           /* ✅ full screen */
+    width: 100%;
+  }
+
+  /* ✅ remove right logo section completely */
+  section.right-sec-image.flex {
+    display: none !important;
+  }
+
+  /* ✅ Signup section exactly centered like screenshot */
+     section.signup-section.flex, .login-section.flex {
+        width: 90% !important;
+        max-width: 280px;
+        height: 80vh !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        left: 1em;
+        position: absolute;
+    }
+
+  /* ✅ "Signup" heading center */
+  section.sub-head-sec {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  section.sub-head-sec h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  /* ✅ Form section */
+  form.sub-detail-signup.flex {
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* ✅ label+input container full width */
+  .sign-username,
+  .sign-email,
+  .sign-password,
+  .login-username,
+  .login-email,
+  .login-password {
+    width: 100% !important;
+    height: auto !important;
+    align-items: start;
+  }
+
+  /* ✅ remove margin left */
+  .span {
+    margin-left: 0 !important;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ✅ Inputs: big and centered */
+  .signusername,
+  .signemail,
+  .signpassword,
+  .loginusername,
+  .loginemail,
+  .loginpassword {
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 14px;
+    padding-left: 14px;
+    font-size: 14px;
+  }
+
+  /* ✅ Already user row smaller and clean */
+  .forgotPasswordSignup {
+    width: 100% !important;
+    font-size: 12px;
+    margin-top: -5px;
+  }
+
+  /* ✅ Submit button centered like screenshot */
+  .submission.flex {
+    width: 100% !important;
+    height: auto !important;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .submitting-sign, .submitting-login {
+    width: 60% !important;         /* button not full width like screenshot */
+    height: 44px !important;
+    border-radius: 30px !important;
+    font-weight: 600;
+  }
+}
+
 body{background-color: #FFFDF8;}
 section.signup-section.flex, .login-section.flex
  {

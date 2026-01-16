@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-import React from 'react'
-import "./LS.css"
-=======
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LS.css";
 import LoginSignupBG from "/LoginSignupBG.png";
 import logo2 from "/logo2.png";
 
->>>>>>> 0443b5695d9153c1005188fcc40464e553c00d26
 function Login() {
   const navigate = useNavigate();
 
