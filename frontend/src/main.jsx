@@ -5,13 +5,15 @@ import AboutUS from "./Components/AboutUS/AboutUS.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Liked from "./Components/Liked/Liked.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
-import Login from "./Components/Login_Signup/Login.jsx";
+import Login from "./Components/LoginSignup/Login.jsx";
+import Signup from "./Components/LoginSignup/Signup.jsx";
+
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
 
-      <Route path="/" element={<Home />}>
+      <Route path="/home" element={<Home />}>
 
         <Route path="cart" element={ <Cart/> } />
         <Route path="liked" element={ <Liked/> } />
@@ -20,6 +22,7 @@ createRoot(document.getElementById('root')).render(
 
       <Route path="/aboutus" element={<AboutUS />} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/" element={<Signup/>} />
     </Routes>
   </BrowserRouter>
 );

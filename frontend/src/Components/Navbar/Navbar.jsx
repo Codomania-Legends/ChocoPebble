@@ -66,7 +66,9 @@ function Navbar({ aboutus }) {
                 <div className={`products shadow gsap ${(aboutus) ? "aboutus-navbar" : null}`}>
                     <span>Products</span>
                 </div>
-                <div className={`login-signup shadow gsap ${(aboutus) ? "aboutus-navbar" : null}`}>
+                <div className={`login-signup shadow gsap ${(aboutus) ? "aboutus-navbar" : null}`}
+                    onClick={ () => navigate('/signup') }
+                >
                     <span>Login/SignUp</span>
                 </div>
             </section>
