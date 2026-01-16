@@ -49,28 +49,29 @@ It includes a modern **React frontend** and a powerful **backend** for handling 
 
 ---
 
-##⚙️ Installation & Setup
-✅ Prerequisites
-Make sure you have installed:
-  Node.js
-  npm
+##⚙️ Installation & Setup<br>
+✅ Prerequisites<br>
+Make sure you have installed:<br>
+  Node.js<br>
+  npm<br>
 
 ---
 
-##▶️ Running the Project
-To Start Frontend
-Step 1 : cd frontend
-Step 2 : npm install
-Step 3 : npm run dev
+##▶️ Running the Project<br>
+To Start Frontend<br>
+Step 1 : cd frontend<br>
+Step 2 : npm install<br>
+Step 3 : npm run dev<br>
 
-To Start Backend
-Step 1 : cd Backend
-Step 2 : npm install
-Step 3 : npm start
+To Start Backend<br>
+Step 1 : cd Backend<br>
+Step 2 : npm install<br>
+Step 3 : npm start<br>
 
 ---
 
-##📸Images 
-  Signup Page
-  <img height="1500" width="1600" alt="Screenshot 2026-01-16 103731" src="https://github.com/user-attachments/assets/4e0a332a-5acc-4afc-ae88-5a0451d6aff1" />
+##📸Images <br>
+  Signup Page<br>
+  <img height="1500" width="1600" alt="Screenshot 2026-01-16 103731" src="https://github.com/user-attachments/assets/4e0a332a-5acc-4afc-ae88-5a0451d6aff1" /><br>
+  
 
