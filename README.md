@@ -72,5 +72,5 @@ Step 3 : npm start
 
 ##📸Images 
   Signup Page
-  <img width="1919" height="1028" alt="Screenshot 2026-01-16 103731" src="https://github.com/user-attachments/assets/4e0a332a-5acc-4afc-ae88-5a0451d6aff1" />
+  <img height="1028" alt="Screenshot 2026-01-16 103731" src="https://github.com/user-attachments/assets/4e0a332a-5acc-4afc-ae88-5a0451d6aff1" />
 
