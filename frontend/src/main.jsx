@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // <--- Add this! 🚨
 import 'bootstrap/dist/js/bootstrap.bundle.min'; // <--- Add this for the toggle to wor
 import Signup from "./Components/LoginSignup/Signup.jsx";
 
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
 
+      <Route path="/" element={<Signup/>} />
     </Routes>
   </BrowserRouter>
 );

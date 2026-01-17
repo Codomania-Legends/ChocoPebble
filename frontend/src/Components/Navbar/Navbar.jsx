@@ -91,7 +91,7 @@ function Navbar({ aboutus }) {
                         {/* Heart Icon Container */}
                         <div className="position-relative d-flex align-items-center justify-content-center gsap" 
                              style={{ width: '40px', height: '40px', cursor: 'pointer' }}
-                             onMouseEnter={handleHeartEnter} onMouseLeave={handleHeartLeave} onClick={() => navigate('/liked')}>
+                             onMouseEnter={handleHeartEnter} onMouseLeave={handleHeartLeave} onClick={() => navigate('/home/liked')}>
                             <i ref={heartRef} className="fa-solid fa-heart text-brown z-2"></i>
                             <i ref={heart1Ref} className="fa-solid fa-heart text-brown position-absolute"></i>
                             <i ref={heart2Ref} className="fa-solid fa-heart text-brown position-absolute"></i>
@@ -101,7 +101,7 @@ function Navbar({ aboutus }) {
                         <div className="position-relative d-flex align-items-center justify-content-center gsap" 
                              id="hoverScale"
                              style={{ width: '40px', height: '40px', cursor: 'pointer' }}
-                             onMouseEnter={handleCartEnter} onMouseLeave={handleCartLeave} onClick={() => navigate('/cart')}>
+                             onMouseEnter={handleCartEnter} onMouseLeave={handleCartLeave} onClick={() => navigate('/home/cart')}>
                             <i ref={cartRef} className="fa-brands fa-opencart text-brown z-3"></i>
                             <i ref={cloudRef} className="fa-brands fa-cloudversify text-brown position-absolute" style={{ opacity: 0 }}></i>
                         </div>
