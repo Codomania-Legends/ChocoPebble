@@ -15,6 +15,7 @@ import Discript from '../Discription/Discript';
 import PageFooter from '../PageFooter/PageFooter';
 import Navbar from '../Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
+import FadeIn from '../../Animations/FadeIn.jsx';
 
 // Register plugins
 gsap.registerPlugin(SplitText);
@@ -23,6 +24,8 @@ function Home() {
   const textRef = useRef();
   const HR_ref = useRef();
   const containerRef = useRef(null);
+
+  FadeIn(containerRef , true)
 
   useEffect(() => {
     // GSAP Context ensures animations are cleaned up when component unmounts

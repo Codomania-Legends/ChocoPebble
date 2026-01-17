@@ -57,6 +57,7 @@
 .home {
     /* vh-100 and w-100 handled by Bootstrap */
     font-family: 'Gabarito', sans-serif;
+    opacity:  0;
 }
 /* Ensure images don't distort */
 .bar-img {

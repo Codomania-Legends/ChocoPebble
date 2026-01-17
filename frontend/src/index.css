@@ -16,7 +16,7 @@
 html ,body , #root{
     width : 100vw;
     overflow-x: hidden;
-    background-color: #D6C0B3;
+    /* background-color: #D6C0B3; */
 }
 
 .background-gr{
