@@ -27,7 +27,7 @@ function Menu() {
         ease: "power1.inOut",
         duration: 1,
         scrollTrigger: {
-          trigger: ".menu-high",
+          trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
           toggleActions: "play reverse play reverse",
@@ -88,7 +88,7 @@ function Menu() {
     <div ref={containerRef} className='menu-high position-relative'>
       <div className="mainBuyChocolateDiv background-gr d-flex flex-column align-items-center">
         <h1 className='heading-menu text-center mt-5'>Menu Highlights</h1>
-        <img src='/chocolateDrop.png' className='chocolateDrop' alt="drip" />
+        <img src='/chocolateDrop.png' className='chocolateDrop d-none md-d-flex' alt="drip" />
         
         {/* Menu Boxes Container */}
         <div className="menu-boxes w-100 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-evenly align-items-center h-100 pt-5">

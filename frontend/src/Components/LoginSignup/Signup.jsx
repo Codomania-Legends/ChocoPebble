@@ -1,29 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LS.css";
 import LoginSignupBG from "/LoginSignupBG.png";
 import logo2 from "/logo2.png";
+import FadeIn from "../../Animations/FadeIn.jsx";
+import StartAnimationLoginSignup from "./StartAnimationLoginSignup.jsx";
+import WelcomeAnimation from "./Welcome.jsx";
+
+
 function Signup() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const[signupUser, setsignupUser] = useState("")
   const [signupPass, setsignupPass] = useState("");
   const [signupEmail, setSignupEmail] = useState("")
+
+  const [showWelcome , setShowWelcome] = useState([false , undefined])
+
+  const currRef = useRef(null)
+
+  FadeIn(currRef)
+
+  StartAnimationLoginSignup(currRef)
   
-    const handleSubmitBtn = (e) => {
-      e.preventDefault();
-  
-      if (signupUser.trim() === "" || signupPass.trim() === "" || signupEmail.trim() === "") {
-        alert("Please fill details");
-        return;
-      }
-      navigate("/home");
-    };
+  const handleSubmitBtn = (e) => {
+    e.preventDefault();
+
+    if (signupUser.trim() === "" || signupPass.trim() === "" || signupEmail.trim() === "") {
+      alert("Please fill details");
+      return;
+    }
+    setShowWelcome([true , "/"])
+  };
 
     
   return (
     <>
-        <div className="main-div-log flex">
+      { showWelcome[0] ? <WelcomeAnimation route={showWelcome[1]} /> : null}
+        <div ref={currRef} className="main-div-log flex">
             <img src={LoginSignupBG} alt="background" className="log-bg-img" />
             <section className="signup-section flex">
               <section className="sub-head-sec flex">

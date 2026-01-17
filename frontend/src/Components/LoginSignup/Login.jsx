@@ -1,20 +1,25 @@
-<<<<<<< HEAD
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import "./LS.css"
-=======
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LS.css";
 import LoginSignupBG from "/LoginSignupBG.png";
 import logo2 from "/logo2.png";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+import Welcome from "./Welcome.jsx";
+import FadeIn from "../../Animations/FadeIn.jsx";
+import StartAnimationLoginSignup from "./StartAnimationLoginSignup.jsx";
 
->>>>>>> 0443b5695d9153c1005188fcc40464e553c00d26
+gsap.registerPlugin(SplitText)
+
 function Login() {
   const navigate = useNavigate();
 
   const [loginUser, setLoginUser] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("")
+
+  const [showWelcome , setShowWelcome] = useState([false , undefined])
 
   const handleSubmitBtn = (e) => {
     e.preventDefault();
@@ -25,12 +30,17 @@ function Login() {
     }
 
     // After successful validation
-    navigate("/home");
+    setShowWelcome([true , "/"])
   };
+
+  const containerRef = useRef(null)
+  FadeIn(containerRef)
+  StartAnimationLoginSignup(containerRef)
 
   return (
     <>
-      <div className="main-div-log flex">
+      { showWelcome[0] ? <Welcome route={showWelcome[1]} /> : null}
+      <div ref={containerRef} className="main-div-log flex">
         <img src={LoginSignupBG} alt="background" className="log-bg-img" />
 
         <section className="login-section flex">
@@ -78,7 +88,10 @@ function Login() {
                 <i className="fa-solid fa-question questionMark"></i>
               </div>
 
-              <div className="signup" onClick={() => navigate("/")}>
+              <div className="signup" onClick={() => {
+                // navigate("/signup")
+                setShowWelcome([true , "/signup"])
+              }}>
                 Signup
               </div>
             </div>
@@ -93,7 +106,6 @@ function Login() {
         </section>
         <section className="right-sec-image flex">
             <img src={logo2} alt="background" className="logo-img" />
-
         </section>
       </div>
     </>

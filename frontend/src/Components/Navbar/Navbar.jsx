@@ -80,7 +80,7 @@ function Navbar({ aboutus }) {
                             <Link style={{fontSize : "0.85rem",cursor: 'pointer'}} className="nav-link" >Products</Link>
                         </li>
                         <li id="hoverScale" className={`nav-item gsap  ${(aboutus) ? "text-white" : "text-brown"}`}>
-                            <Link style={{fontSize : "0.85rem",cursor: 'pointer'}} className="nav-link" >Login/SignUp</Link>
+                            <Link to="/signup" style={{fontSize : "0.85rem",cursor: 'pointer'}} className="nav-link" >Login/SignUp</Link>
                         </li>
                     </ul>
 

@@ -98,8 +98,12 @@
         padding-bottom: 3rem;
     }
 
+    .chocolateDrop{
+        width: 50em;
+    }
+
     .baksa {
-        width: 80%; /* Wider on mobile */
+        width: 50%; /* Wider on mobile */
         height: 400px; /* Fixed height for consistency */
     }
 
