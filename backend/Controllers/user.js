@@ -27,6 +27,8 @@ export async function HandleSignupUser(req, res) {
     try {
         const { username, email, password } = req.body;
 
+        console.log(req.body)
+
         const alreadyUser = await GetSingleSpecificUser(username, email, password);
 
         if (alreadyUser) throw new Error("User Already exists");

@@ -6,7 +6,8 @@ import logo2 from "/logo2.png";
 import FadeIn from "../../Animations/FadeIn.jsx";
 import StartAnimationLoginSignup from "./StartAnimationLoginSignup.jsx";
 import WelcomeAnimation from "./Welcome.jsx";
-
+import { CheckEmail, CheckPass, CheckUser } from "../../Services/Filter.js";
+import axios from 'axios'
 
 function Signup() {
   const navigate = useNavigate()
@@ -23,12 +24,25 @@ function Signup() {
 
   StartAnimationLoginSignup(currRef)
   
-  const handleSubmitBtn = (e) => {
+  const handleSubmitBtn = async(e) => {
     e.preventDefault();
 
     if (signupUser.trim() === "" || signupPass.trim() === "" || signupEmail.trim() === "") {
       alert("Please fill details");
       return;
+    }
+    if( !CheckEmail(signupEmail) ) return;
+    if( !CheckPass(signupPass) ) return;
+    if( !CheckUser(signupUser) ) return;
+    try {
+      const response = await axios.post("http://localhost:5000/user/signup", {
+        username : signupUser ,
+        email : signupEmail,
+        password : signupPass,
+      })
+      console.log(response)
+    } catch (error) {
+      console.warn(error)
     }
     setShowWelcome([true , "/"])
   };
@@ -72,11 +86,6 @@ function Signup() {
                   <div className="forgotPassword">Already a User <i class="fa-solid fa-question questionMark"></i></div>
                   <div className="signup" onClick={() => navigate("/login")}>Login</div>
                 </div>
-                {/* <div className="identification flex">
-                  <button className={`student`} >Student</button>
-                  <button className={`profesor`} >Professor</button>
-                  <button className={`admin`} >Admin</button>
-                </div> */}
                 <div className="submission flex">
                   <button className="submitting-sign" type="submit" onClick={handleSubmitBtn}>Submit</button>
                 </div>

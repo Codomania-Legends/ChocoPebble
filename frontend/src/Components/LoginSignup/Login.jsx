@@ -9,6 +9,7 @@ import { SplitText } from "gsap/SplitText";
 import Welcome from "./Welcome.jsx";
 import FadeIn from "../../Animations/FadeIn.jsx";
 import StartAnimationLoginSignup from "./StartAnimationLoginSignup.jsx";
+import axios from "axios";
 
 gsap.registerPlugin(SplitText)
 
@@ -21,14 +22,24 @@ function Login() {
 
   const [showWelcome , setShowWelcome] = useState([false , undefined])
 
-  const handleSubmitBtn = (e) => {
+  const handleSubmitBtn = async (e) => {
     e.preventDefault();
 
     if (loginUser.trim() === "" || loginPassword.trim() === "" || loginEmail.trim() === "") {
-      alert("Please fill in both Username and Password!");
+      alert("Please fill in the Details!");
       return;
     }
-
+    try {
+      const response = await axios.post('http://localhost:5000/user/login', {
+        username : loginUser,
+        password : loginPassword,
+        email : loginEmail
+      })
+      alert(response.data.msg)
+      if( response.data.error ) return
+    } catch (error) {
+      console.warn(error)
+    }
     // After successful validation
     setShowWelcome([true , "/"])
   };
